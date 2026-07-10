@@ -1,0 +1,42 @@
+aid: vidcruiter:vidcruiter-plans-pricing
+name: VidCruiter Plans and Pricing
+description: >-
+  VidCruiter does not publish public, self-service pricing. Pricing is
+  quote-based and gated behind a sales demo. The details below are summarized
+  from third-party reviews and marketplace listings, not from an official
+  VidCruiter price sheet, and should be treated as indicative only.
+pricingModel: contact-sales
+publicPricing: false
+currency: USD
+source: >-
+  Indicative figures aggregated from third-party reviews (Truffle, Capterra,
+  G2, ITQlick). VidCruiter publishes no official price list.
+notes:
+- VidCruiter hides pricing behind a "contact us" / demo form; a custom quote
+  requires contacting their sales team.
+- Pricing is customized by organization size, candidate/hire volume, and the
+  set of modules selected.
+- Third-party reviews cite a starting floor of roughly USD 5,000 per year;
+  treat this as a floor, not an estimate.
+- Each product module (video interviews, scheduling, skills testing, reference
+  checking, audio interviews, video proctoring) is priced separately and can be
+  bundled, often at a discount.
+- Per-hire cost decreases as annual hiring volume increases.
+- Integration fees (for example connecting to an enterprise HRIS/ATS) are
+  billed separately, yearly, on top of the base platform fee.
+plans:
+- name: Custom Quote
+  price: contact-sales
+  unit: annual
+  description: >-
+    Single quote-based commercial model. Buyers select one or more modules;
+    VidCruiter provides a tailored annual quote following a demo. No public
+    tiers, free tier, or trial pricing is published.
+  features:
+  - Modular product selection (video interviews, scheduling, skills testing,
+    reference checking, audio interviews, video proctoring)
+  - Volume-based per-hire discounts
+  - Separately billed integration/implementation fees
+contact:
+  url: https://vidcruiter.com/request-demo/
+  type: SalesContact

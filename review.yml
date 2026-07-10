@@ -1,0 +1,102 @@
+aid: vidcruiter
+name: VidCruiter
+review:
+  question: Does VidCruiter expose a documented public WebSocket API?
+  answer: false
+  date: '2026-07-10'
+  reviewer: API Evangelist
+  asyncapiSpecCreated: false
+  asyncapiScopeNote: |
+    No AsyncAPI document was authored. VidCruiter publishes no public API at
+    all - there is no documented HTTP/REST reference, base URL, or key issuance,
+    and therefore no server-push transport (WebSocket or SSE) on VidCruiter's
+    own surface to model. The only documented programmatic behavior is a
+    request/response web-services integration in which a system of record (for
+    example Slate) periodically pushes application records to a per-tenant
+    VidCruiter endpoint and pulls back completed interview results by polling
+    with a timestamp parameter. That is client-initiated HTTP polling, not a
+    WebSocket.
+findings:
+  summary: |
+    VidCruiter does not publish a documented public WebSocket API. It does not
+    publish a public developer API of any kind. VidCruiter is a recruitment
+    technology platform (video interviewing, scheduling, skills testing,
+    automated reference checking, audio interviews, video proctoring). Its
+    programmatic surface is a partner/enterprise integration capability: a
+    catalog of pre-built connectors (ATS/HCM, background check, calendar, job
+    board, SSO, video conferencing) plus a bidirectional web-services
+    integration. In that integration each institution is given a unique,
+    account-provisioned API endpoint by a VidCruiter account representative; a
+    system of record exports application records to VidCruiter and later
+    retrieves a ShareableProfileUrl for each completed interview. No public
+    base URL, API reference, OpenAPI document, or self-serve key exists, and no
+    realtime, bidirectional, or streaming WebSocket (ws:// or wss://) endpoint
+    is documented anywhere.
+  accessModel: |
+    Partner/enterprise gated. API endpoints are per-tenant and provisioned only
+    through a VidCruiter account representative. There is no public developer
+    portal, sign-up, sandbox, or documentation reference. The closest public
+    material is the integrations marketing page and third-party integration
+    guides (for example Technolutions Slate's VidCruiter integration doc).
+  transports:
+    - protocol: REST
+      scheme: https
+      documented: partial
+      note: >-
+        A per-tenant web-services endpoint exists for the documented Slate
+        integration (request/response over HTTPS, user token passed as a query
+        string). Endpoint is account provisioned; no public base URL or
+        reference is published.
+    - protocol: Webhook
+      scheme: https
+      documented: false
+      note: >-
+        No public webhook/event catalog is documented on VidCruiter's own
+        surface. Integrations are handled by pre-built connectors and the
+        partner web-services flow.
+    - protocol: WebSocket
+      scheme: wss
+      documented: false
+      note: >-
+        No WebSocket endpoint is documented anywhere in VidCruiter's public
+        material as of the review date.
+  endpointsConfirmedRest: []
+  endpointsModeled: |
+    The apis.yml lists logical APIs (Partner Integration, Candidates,
+    Interviews, Evaluations) marked endpointsModeled: true. These represent the
+    resources a VidCruiter integration would plausibly expose; no concrete
+    paths, schemas, or base URLs were fabricated because none are published.
+    The only behavior sourced from documentation is the Slate web-services
+    pattern (push application records; poll for a ShareableProfileUrl by
+    timestamp).
+sources:
+  - url: https://vidcruiter.com/integrations/
+    type: Documentation
+    note: >-
+      Integrations catalog (Workday, Dayforce, ADP, Oracle, SAP SuccessFactors,
+      Greenhouse, Lever, Checkr, Zoom, Teams, Okta, etc.). Invites custom
+      integration/partnership requests; no public API reference.
+  - url: https://knowledge.technolutions.net/docs/vidcruiter-integration
+    type: IntegrationGuide
+    note: >-
+      Third-party (Slate) guide describing the bidirectional web-services
+      integration - unique account-provisioned endpoint, user token via query
+      string, timestamp-based polling, ShareableProfileUrl return value.
+  - url: https://www.linkedin.com/company/vidcruiter
+    type: LinkedIn
+    note: Company profile; Moncton, New Brunswick, Canada; ~119 employees.
+  - url: https://apitracker.io/a/vidcruiter
+    type: ThirdPartyProfile
+    note: >-
+      Notes VidCruiter does not currently offer a publicly available developer
+      API for extended functionality; integration is via connectors and custom
+      connection through account contact.
+actions:
+  asyncapiPath: null
+  apisYmlUpdated: true
+  reason: |
+    No WebSocket surface exists and VidCruiter publishes no public API to model.
+    No AsyncAPI document was created because there is no documented server-push
+    transport. The apis.yml documents VidCruiter honestly as a partner-gated
+    integration with endpointsModeled logical APIs rather than fabricating a
+    public endpoint surface.
