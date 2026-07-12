@@ -116,6 +116,8 @@ apis:
     base URL for evaluations; any programmatic access is provisioned per tenant
     through an account representative.
 common:
+- type: DomainSecurity
+  url: security/vidcruiter-domain-security.yml
 - type: LinkedIn
   url: https://www.linkedin.com/company/vidcruiter
 - type: Website
