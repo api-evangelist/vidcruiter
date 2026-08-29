@@ -16,6 +16,17 @@ description: >-
   VidCruiter and pull completed interview results back out. API access is gated
   behind a VidCruiter account representative; there is no public API reference,
   OpenAPI document, base URL, or self-serve key issuance.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: false
+  label: Hosted service · you call their endpoint
+  confidence: medium
+  source:
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: enterprise
   onboarding: unknown
