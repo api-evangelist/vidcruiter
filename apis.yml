@@ -1,5 +1,8 @@
 aid: vidcruiter
 url: https://raw.githubusercontent.com/api-evangelist/vidcruiter/refs/heads/main/apis.yml
+x-api-posture: docs-gated
+x-api-posture-basis: observed
+x-api-posture-note: "API access is gated behind a VidCruiter account representative; there is no public API reference, OpenAPI document, base URL, or self-serve key issuance."
 name: VidCruiter
 kind: company
 description: >-
