@@ -47,6 +47,15 @@ tags:
   - Recruitment
   - Video Interviewing
   - Hiring
+  - Human Resources
+  - Applicant Tracking
+  - ATS Integration
+  - Candidate Screening
+  - Reference Checking
+tags_raw:
+  - Recruitment
+  - Video Interviewing
+  - Hiring
   - HR Tech
   - Applicant Tracking
   - ATS Integration
@@ -59,6 +68,11 @@ apis:
   - aid: vidcruiter:vidcruiter-partner-integration-api
     name: VidCruiter Partner Integration API
     tags:
+      - Integration
+      - Web Services
+      - ATS
+      - Partners
+    tags_raw:
       - Integration
       - Web Services
       - ATS
