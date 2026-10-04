@@ -44,7 +44,7 @@ accessModel:
   method: derived
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/vidcruiter.png
 tags:
-  - Recruitment
+  - Recruiting
   - Video Interviewing
   - Hiring
   - Human Resources
@@ -70,7 +70,7 @@ apis:
     tags:
       - Integration
       - Web Services
-      - ATS
+      - Applicant Tracking
       - Partners
     tags_raw:
       - Integration
