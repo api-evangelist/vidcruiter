@@ -62,7 +62,7 @@ tags_raw:
   - Candidate Screening
   - Reference Checking
 created: '2026-07-10'
-modified: '2026-07-25'
+modified: '2026-10-06'
 specificationVersion: '0.23'
 apis:
   - aid: vidcruiter:vidcruiter-partner-integration-api
@@ -97,6 +97,10 @@ apis:
       only new records are retrieved. Endpoints are per-tenant and account
       provisioned; no public base URL or reference is published.
 common:
+  - url: https://vidcruiter.com/blog/
+    type: Blog
+  - url: https://vidcruiter.com/feed.xml
+    type: BlogRSS
   - type: DomainSecurity
     url: security/vidcruiter-domain-security.yml
   - type: LinkedIn
