@@ -44,3 +44,17 @@ plans:
 contact:
   url: https://vidcruiter.com/request-demo/
   type: SalesContact
+x-canonical:
+  generated: '2026-10-08'
+  vocabulary: all/0-working/economics/plans-canonical.yml
+  models:
+  - negotiated
+  units: []
+  plans:
+  - name: Custom Quote
+    access: other
+    model: negotiated
+    model_how: derived
+    units:
+    - other
+    periods: []
