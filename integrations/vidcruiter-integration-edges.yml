@@ -1,0 +1,90 @@
+generated: '2026-10-14'
+method: searched
+checked:
+- adp/integrations/adp-integration-edges.yml
+- bamboohr/integrations/bamboohr-integration-edges.yml
+- greenhouse/integrations/greenhouse-integration-edges.yml
+- okta/integrations/okta-integration-edges.yml
+source:
+- adp/integrations/adp-integration-edges.yml
+- bamboohr/integrations/bamboohr-integration-edges.yml
+- greenhouse/integrations/greenhouse-integration-edges.yml
+- okta/integrations/okta-integration-edges.yml
+edges:
+- partner_name: ADP (own)
+  partner: adp
+  partner_match: mirror
+  mirror_match: domain
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: own
+  evidence: https://apps.adp.com/apps/376047/vidcruiter-connector-for-adp-recruiting-management
+  mirror_of: adp/integrations/adp-integration-edges.yml
+  apps:
+  - VidCruiter Connector for ADP® Recruiting Management
+  - VidCruiter Lite for ADP Workforce Now® Recruitment
+  - VidCruiter Video Interviewing Connector for ADP Workforce Now® Recruitment
+  listing_count: 3
+  detected: '2026-10-14'
+  detected_by: mirror-platform-listings.py
+  category: EeT
+- partner_name: BambooHR (own)
+  partner: bamboohr
+  partner_match: mirror
+  mirror_match: domain
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: own
+  evidence: https://www.bamboohr.com/integrations/listings/vidcruiter
+  mirror_of: bamboohr/integrations/bamboohr-integration-edges.yml
+  apps:
+  - VidCruiter
+  listing_count: 1
+  detected: '2026-10-14'
+  detected_by: mirror-platform-listings.py
+  category: Video Interviews, Assessments
+- partner_name: Greenhouse (own)
+  partner: greenhouse
+  partner_match: mirror
+  mirror_match: domain
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: own
+  evidence: https://integrations.greenhouse.com/partners/vid-cruiter
+  mirror_of: greenhouse/integrations/greenhouse-integration-edges.yml
+  apps:
+  - VidCruiter
+  listing_count: 1
+  detected: '2026-10-14'
+  detected_by: mirror-platform-listings.py
+- partner_name: Okta (own)
+  partner: okta
+  partner_match: mirror
+  mirror_match: domain
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: own
+  evidence: https://www.okta.com/integrations/vidcruitercom/
+  mirror_of: okta/integrations/okta-integration-edges.yml
+  apps:
+  - VidCruiter
+  listing_count: 1
+  detected: '2026-10-14'
+  detected_by: mirror-platform-listings.py
+  category: Single Sign-On
+  badges:
+  - OKTA_VERIFIED
+  features:
+  - CREATE
+  - DEACTIVATE
+  - IDENTITY_SECURITY_POSTURE_MANAGEMENT
+  - SAML
+  - UPDATE
