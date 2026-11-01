@@ -1,4 +1,4 @@
-# VidCruiter (vidcruiter)
+# VidCruiter
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -64,61 +64,91 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-VidCruiter is a Moncton, Canada based recruitment technology company that provides a modular hiring platform - pre-recorded and live video interviewing, automated interview scheduling, skills and pre-employment testing, automated reference checking, audio interviews, and video proctoring.
+VidCruiter is a Moncton, Canada based recruitment technology company that provides a modular hiring platform - pre-recorded and live video interviewing, automated interview scheduling, skills and pre-employment testing, automated reference checking, audio interviews, and video proctoring. VidCruiter does not publish a public, self-service developer API. Its programmatic surface is a partner and enterprise integration capability: pre-built connectors to major ATS/HCM, background-check, calendar, job-board, SSO, and video-conferencing providers, plus a bidirectional web-services integration in which an institution's unique, account-provisioned API endpoint is exchanged with a system of record (for example Slate) to push application records into VidCruiter and pull completed interview results back out. API access is gated behind a VidCruiter account representative; there is no public API reference, OpenAPI document, base URL, or self-serve key issuance.
 
-**Access model: partner / enterprise gated.** VidCruiter does **not** publish a public, self-service developer API. There is no public developer portal, API reference, OpenAPI document, base URL, sandbox, or self-serve key issuance. This entry documents VidCruiter honestly as a gated integration provider rather than fabricating a public API surface.
+**Areas:** Recruiting · Video Interviewing · Hiring · Human Resources · Applicant Tracking · ATS Integration · Candidate Screening · Reference Checking
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/vidcruiter/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/vidcruiter/refs/heads/main/apis.yml)
+## VidCruiter on APIs.io
 
-## What is actually available
+Everything profiled for VidCruiter is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/vidcruiter/](https://apis.io/providers/vidcruiter/)** — or go straight to one of the APIs or properties below.
 
-VidCruiter's programmatic surface is an integration capability, not an open API:
+### APIs (1)
 
-- **Pre-built connectors** to major ATS/HCM (Workday, Dayforce, ADP, Oracle, SAP SuccessFactors, Greenhouse, Lever, and 20+ others), background-check (Checkr, Certn, Turn.ai), calendar (Google, Office 365, Exchange, Outlook, iCloud), job boards (Indeed, Glassdoor, ZipRecruiter, Talroo, Seek), SSO (Okta, Google Workspace, Azure, SAML), and video conferencing (Zoom, Microsoft Teams, Google Meet, GoTo, Webex).
-- **A bidirectional web-services integration.** In the documented Slate pattern, the ATS pushes application records to a per-tenant VidCruiter web-service endpoint (authenticated with a user token passed as a query string), and VidCruiter returns a `ShareableProfileUrl` for each completed interview via an API call, using a timestamp parameter so only new records are retrieved.
-- **Account-provisioned endpoints.** An institution's unique API endpoint is obtained from a VidCruiter account representative. Endpoints are per-tenant; there is no public base URL.
+- [VidCruiter Partner Integration API](https://apis.io/apis/vidcruiter/vidcruiter-partner-integration-api/) — The real, documented programmatic surface. VidCruiter provisions each institution a unique web-services API endpoint (obtained from a VidCruiter account…
 
-## APIs (logical, honestly modeled)
+### Published properties
 
-The APIs listed in `apis.yml` are **logical resources marked `endpointsModeled: true`** - they describe what a VidCruiter integration would plausibly expose. No concrete paths, schemas, or base URLs were invented because none are published.
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-- **VidCruiter Partner Integration API** - the real, documented (but gated) web-services integration surface.
-- **VidCruiter Candidates API** - modeled candidate/applicant records synchronized with an ATS/HRIS.
-- **VidCruiter Interviews API** - modeled video/audio interview sessions and results.
-- **VidCruiter Evaluations API** - modeled evaluator ratings, scorecards, and reference-check results.
+#### Security (1)
 
-## Pricing
+Authentication, trust centre, and vulnerability disclosure.
 
-Quote-based and gated behind a sales demo. VidCruiter publishes no official price list; third-party reviews cite a starting floor of roughly USD 5,000/year, with each module priced separately and integration fees billed on top. See [`plans/vidcruiter-plans-pricing.yml`](plans/vidcruiter-plans-pricing.yml). Figures there are indicative and third-party sourced, not official.
+- [Vidcruiter Domain Security](https://apis.io/security/vidcruiter/vidcruiter-domain-security/)
 
-## WebSocket review
+#### Plans and pricing (1)
 
-`review.yml` answers the standing question - **Does VidCruiter expose a documented public WebSocket API? No.** VidCruiter publishes no public API at all, so there is no server-push transport to model and no AsyncAPI document was authored.
+Published plans, tiers and prices.
 
-## Tags
+- [Vidcruiter Plans Pricing](https://apis.io/plans/vidcruiter/vidcruiter-plans-pricing/)
 
-- Recruitment
-- Video Interviewing
-- Hiring
-- HR Tech
-- Applicant Tracking
-- ATS Integration
-- Candidate Screening
-- Reference Checking
+## Where to find this API
 
-## Timestamps
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
-- **Created:** 2026-07-10
-- **Modified:** 2026-07-10
-
-## Common Properties
-
-- [LinkedIn](https://www.linkedin.com/company/vidcruiter)
 - [Website](https://vidcruiter.com)
 - [Documentation](https://vidcruiter.com/integrations/)
-- [Plans](plans/vidcruiter-plans-pricing.yml)
+- [Blog](https://vidcruiter.com/blog/)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 7.2** — minimal · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 57.1 |
+| Contract quality | 0.0 |
+| Contract governance | 0.0 |
+| Operational transparency | 0.0 |
+| Developer ergonomics | 11.9 |
+| Access clarity | 5.3 |
+
+**Agent readiness 0.0** — human-only
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | — |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 5.9** — Employment & Payroll
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/vidcruiter/](https://apis.io/providers/vidcruiter/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for VidCruiter: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/vidcruiter/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
